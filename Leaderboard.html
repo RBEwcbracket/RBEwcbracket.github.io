@@ -66,7 +66,6 @@
                             <div class="stats-summary">
                                 <div>Winner: ${user.breakdown.winnerPoints}</div>
                                 <div>Exact: ${user.breakdown.exactPoints}</div>
-                                <div>Close: ${user.breakdown.closePoints}</div>
                             </div>
                             <span class="details-link" onclick="showMatches('${user.username}')">View Predictions vs Results</span>
                             <div id="matches-${user.username}" class="match-details"></div>
@@ -78,8 +77,7 @@
         function toggleArea(id) {
             document.getElementById(id).style.display = (document.getElementById(id).style.display === 'block') ? 'none' : 'block';
         }
-
-        function showMatches(username) {
+function showMatches(username) {
             const container = document.getElementById(`matches-${username}`);
             if (container.style.display === 'block') { container.style.display = 'none'; return; }
             
@@ -100,7 +98,18 @@
                     const predScore = `${userPreds[base]}-${userPreds[base+1]}`;
                     const predWin = userPreds[base+2] === 'teamA' ? m.teamA : m.teamB;
                     
-                    // Logic for coloring the winner text
+                    // Logic for coloring the EXACT SCORE
+                    let scoreClass = '';
+                    if (res.scoreA !== null && res.scoreB !== null) {
+                        // Using Number() ensures safe comparison in case JSON loaded as strings
+                        if (Number(userPreds[base]) === res.scoreA && Number(userPreds[base+1]) === res.scoreB) {
+                            scoreClass = 'correct';
+                        } else {
+                            scoreClass = 'wrong';
+                        }
+                    }
+
+                    // Logic for coloring the WINNER text
                     let winClass = '';
                     if (res.winner) {
                         winClass = (userPreds[base+2] === res.winner) ? 'correct' : 'wrong';
@@ -109,7 +118,10 @@
                     html += `<tr>
                         <td class="match-col">${m.teamA}<br><small>vs ${m.teamB}</small></td>
                         <td class="actual">${actScore}<br><span class="winner-tag">${actWin}</span></td>
-                        <td class="${winClass}">${predScore}<br><span class="${winClass}">${predWin}</span></td>
+                        <td>
+                            <span class="${scoreClass}">${predScore}</span><br>
+                            <span class="${winClass}">${predWin}</span>
+                        </td>
                         <td>${pts}</td>
                     </tr>`;
                 });
@@ -117,6 +129,7 @@
             }
             container.style.display = 'block';
         }
+
     </script>
 </body>
 </html>
