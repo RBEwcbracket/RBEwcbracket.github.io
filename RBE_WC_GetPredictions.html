@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RBE World Cup Bracket</title>
+  <style>
+    :root {
+      --primary: #1e293b; --secondary: #3b82f6; --accent: #10b981;
+      --bg: #f8fafc; --card: #ffffff; --text: #334155;
+    }
+    body { font-family: -apple-system, sans-serif; background-color: var(--bg); color: var(--text); padding: 20px; display: flex; flex-direction: column; align-items: center; }
+    header { text-align: center; margin-bottom: 2rem; }
+    .form-container { width: 100%; max-width: 600px; }
+    .user-info { background: var(--card); padding: 20px; border-radius: 12px; margin-bottom: 2rem; display: flex; gap: 10px; }
+    .user-info input { flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; }
+    .match-card { background: var(--card); padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .score-row { display: flex; justify-content: center; align-items: center; gap: 10px; }
+    input[type="number"] { width: 50px; height: 50px; text-align: center; font-size: 1.2rem; border: 2px solid #e2e8f0; border-radius: 8px; }
+    .tiebreaker { display: none; margin-top: 15px; padding: 10px; background: #f1f5f9; border-radius: 8px; }
+    .tiebreaker.visible { display: block; }
+    .submit-btn { width: 100%; padding: 15px; background: var(--accent); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+    #statusMessage { font-size: 1.5rem; font-weight: bold; color: var(--accent); margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>RBE World Cup Bracket</h1>
+    <h2>Round of 32 Predictions</h2>
+  </header>
+
+
+  <div class="form-container">
+    <form id="predictionForm">
+
+       <div style="background: #fff3cd; color: #856404; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 0.85em; border: 1px solid #ffeeba; line-height: 1.4;">
+   <strong>Registration Details:</strong>
+    <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+   <li><strong>Username:</strong> Choose a name that will appear on the leaderboard.</li>
+        <li><strong>PIN:</strong> Select a <strong>4-digit PIN</strong>. This acts as a simple "key" to ensure your entry isn't accidentally modified by others. Please note this is not a secure password, so don't use a PIN you use for your bank or sensitive accounts.</li>   </ul>
+    </div>
+    <div style="background: #fff3cd; color: #856404; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 0.85em; border: 1px solid #ffeeba; line-height: 1.4;">
+           <strong>How to enter your predictions:</strong> 
+    <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+        <li><strong>Final Score:</strong> Enter the score at the end of <strong>90 minutes + extra time</strong>. Penalty shootouts do not count toward this score.</li>
+        <li><strong>Tie Scenario:</strong> If you predicted a tie, i.e., game goes to penalties, you must select the team you believe will win the resulting penalty shootout.</li>        
+    </ul>
+</div>
+
+<div style="background: #fff3cd; color: #856404; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 0.85em; border: 1px solid #ffeeba; line-height: 1.4;">
+           <strong>How points are awarded for round of 32 predictions:</strong> 
+    <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+            <li><strong>Correct Winner:</strong> 7 Points</li>
+        <li><strong>Exact Score Bonus:</strong> +5 Points (only if winner is correct)</li>
+        <li><strong>Goal Differential Bonus:</strong> +2 Points (if winner is correct, but score is not exact)</li>
+    </ul>
+</div>
+
+<div style="background: #fff3cd; color: #856404; padding: 12px; border-radius: 8px; margin-bottom: 15px; font-size: 0.85em; border: 1px solid #ffeeba; line-height: 1.4;">
+           <strong>Submission:</strong> 
+    <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+            <li>After entering your predictions, click the submit button</li>
+        <li>If you submit multiple times, only the most recent submission will be used for your predictions</li>
+        <li><strong>Latest you can submit is Sunday 2:30pm EDT</strong> (30 minutes before the start of the first game of round of 32)</li>
+    </ul>
+</div>
+
+      <div class="user-info">
+        <input type="text" name="username" placeholder="Your Name" required>
+        <input type="number" name="pin" placeholder="PIN" required>
+      </div>
+
+      <button type="button" id="randomizeBtn" style="margin-bottom: 20px; padding: 10px; width: 100%; background: #64748b; color: white; border: none; border-radius: 8px; cursor: pointer;">
+        Randomize Scores
+      </button>
+
+      <div id="match-list">Loading matches...</div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Submit Predictions</button>
+    </form>
+    <p id="statusMessage" style="text-align: center; margin-top: 20px;"></p>
+  </div>
+
+<script>
+  // Fetch matches.json and build the form
+  fetch('matches.json?t=' + Date.now())
+    .then(res => res.json())
+    .then(matches => {
+      const container = document.getElementById('match-list');
+      container.innerHTML = ""; 
+
+      matches.forEach(m => {
+        container.innerHTML += `
+          <div class="match-card" data-match="${m.id}">
+            <div style="font-weight:bold; margin-bottom:10px;">Match ${m.id}</div>
+            <div class="score-row">
+              <span class="team-a">${m.teamA}</span>
+              <input type="number" class="score-input" name="m${m.id}_a" min="0" required> - 
+              <input type="number" class="score-input" name="m${m.id}_b" min="0" required>
+              <span class="team-b">${m.teamB}</span>
+            </div>
+            <div class="tiebreaker">
+              <label>Tie! Which team advances?</label>
+              <select class="tie-select">
+                <option value="">Select...</option>
+                <option value="teamA">${m.teamA}</option>
+                <option value="teamB">${m.teamB}</option>
+              </select>
+            </div>
+            <input type="hidden" name="m${m.id}_winner" class="hidden-winner">
+          </div>`;
+      });
+
+      // Tie-detection event listeners
+      document.querySelectorAll('.match-card').forEach(card => {
+        const inputs = card.querySelectorAll('.score-input');
+        const tiebreaker = card.querySelector('.tiebreaker');
+        const tieSelect = card.querySelector('.tie-select');
+        
+        inputs.forEach(i => i.addEventListener('input', () => {
+          const valA = parseInt(inputs[0].value);
+          const valB = parseInt(inputs[1].value);
+          if (!isNaN(valA) && !isNaN(valB)) {
+            const isTie = valA === valB;
+            tiebreaker.classList.toggle('visible', isTie);
+            tieSelect.required = isTie;
+            if (!isTie) tieSelect.value = "";
+          }
+        }));
+      });
+
+      // Randomize logic
+      document.getElementById('randomizeBtn').addEventListener('click', () => {
+        document.querySelectorAll('.match-card').forEach((card) => {
+          const inputs = card.querySelectorAll('.score-input');
+          const tiebreaker = card.querySelector('.tiebreaker');
+          const tieSelect = card.querySelector('.tie-select');
+          const winnerInput = card.querySelector('.hidden-winner');
+          
+          const scoreA = Math.floor(Math.random() * 6);
+          const scoreB = Math.floor(Math.random() * 6);
+          inputs[0].value = scoreA;
+          inputs[1].value = scoreB;
+          
+          if (scoreA > scoreB) {
+            winnerInput.value = "teamA";
+            tiebreaker.classList.remove('visible');
+          } else if (scoreB > scoreA) {
+            winnerInput.value = "teamB";
+            tiebreaker.classList.remove('visible');
+          } else {
+            tiebreaker.classList.add('visible');
+            tieSelect.selectedIndex = Math.random() > 0.5 ? 1 : 2;
+            winnerInput.value = tieSelect.value;
+          }
+        });
+      });
+    })
+    .catch(err => {
+      document.getElementById('match-list').innerText = "Error loading matches.json";
+      console.error(err);
+    });
+
+  // Final Submit logic
+  document.getElementById('predictionForm').addEventListener('submit', e => {
+    e.preventDefault();
+    document.querySelectorAll('.match-card').forEach(card => {
+      const inputs = card.querySelectorAll('.score-input');
+      const winnerInput = card.querySelector('.hidden-winner');
+      const tieSelect = card.querySelector('.tie-select');
+      
+      const valA = parseInt(inputs[0].value);
+      const valB = parseInt(inputs[1].value);
+      
+      if (valA > valB) {
+        winnerInput.value = "teamA";
+      } else if (valB > valA) {
+        winnerInput.value = "teamB";
+      } else {
+        winnerInput.value = tieSelect.value;
+      }
+    });
+
+    const btn = document.getElementById('submitBtn');
+    const msg = document.getElementById('statusMessage');
+    btn.disabled = true;
+    btn.innerText = "Submitting...";
+ 
+    
+    fetch('https://script.google.com/macros/s/AKfycbyG5-wU5IuGBjSNYCZmtM_9v4ONlOtaE3w7cS-EyIYfTN514Wuu7mfj3LRenGEPz_c1/exec', { method: 'POST', body: new FormData(e.target) })
+      .then(() => {
+        msg.innerText = "✓ Predictions Submitted!";
+        btn.innerText = "Submitted!";
+        setTimeout(() => { btn.disabled = false; btn.innerText = "Submit Updated Predictions"; msg.innerText = ""; }, 4000);
+      })
+      .catch(() => {
+        msg.innerText = "Error! Please try again.";
+        btn.disabled = false;
+        btn.innerText = "Submit Predictions";
+      });
+  });
+</script>
+</body>
+</html>

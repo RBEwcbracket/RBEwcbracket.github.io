@@ -1,0 +1,18 @@
+[
+      { "id": 1, "teamA": "Brazil", "teamB": "Germany", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 2, "teamA": "Argentina", "teamB": "France", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 3, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 4, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 5, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 6, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 7, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 8, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 9, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 10, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 11, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 12, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 13, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 14, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 15, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} },
+      { "id": 16, "teamA": "Spain", "teamB": "Italy", "points": { "winner": 7, "exact": 5, "close": 2} }
+]
