@@ -1,7 +1,7 @@
 [
-      { "id": 1, "scoreA": 2, "scoreB": 1, "winner": "teamA"},
-      { "id": 2, "scoreA": 4, "scoreB": 6, "winner": "teamB"},
-      { "id": 3, "scoreA": 3, "scoreB": 3, "winner": "teamA"},
+      { "id": 1, "scoreA": null, "scoreB": null, "winner": null},
+      { "id": 2, "scoreA": null, "scoreB": null, "winner": null},
+      { "id": 3, "scoreA": null, "scoreB": null, "winner": null},
       { "id": 4, "scoreA": null, "scoreB": null, "winner": null},
       { "id": 5, "scoreA": null, "scoreB": null, "winner": null},
       { "id": 6, "scoreA": null, "scoreB": null, "winner": null},

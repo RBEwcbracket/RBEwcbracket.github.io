@@ -2,9 +2,9 @@
     {
         "username": "Random03",
         "pin": 3030,
-        "totalPoints": 10,
+        "totalPoints": 0,
         "breakdown": {
-            "winnerPoints": 10,
+            "winnerPoints": 0,
             "exactPoints": 0
         },
         "matchPoints": [
@@ -14,7 +14,7 @@
             },
             {
                 "matchId": 2,
-                "pointsEarned": 10
+                "pointsEarned": 0
             },
             {
                 "matchId": 3,
