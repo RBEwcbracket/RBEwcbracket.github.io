@@ -12,8 +12,32 @@
     body { font-family: -apple-system, sans-serif; background-color: var(--bg); color: var(--text); padding: 20px; display: flex; flex-direction: column; align-items: center; }
     header { text-align: center; margin-bottom: 2rem; }
     .form-container { width: 100%; max-width: 600px; }
-    .user-info { background: var(--card); padding: 20px; border-radius: 12px; margin-bottom: 2rem; display: flex; gap: 10px; }
-    .user-info input { flex: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; }
+    .user-info { 
+    background: var(--card); 
+    padding: 20px; 
+    border-radius: 12px; 
+    margin-bottom: 2rem; 
+    display: flex; 
+    flex-direction: row; /* Puts them back side-by-side */
+    gap: 12px; /* Keeps a little breathing room between them */
+}
+
+/* Base styles for both inputs */
+.user-info input { 
+    padding: 12px; 
+    border: 1px solid #cbd5e1; 
+    border-radius: 8px; 
+}
+
+/* Gives the Username 60% of the space */
+.user-info input[name="username"] {
+    flex: 6;
+}
+
+/* Gives the PIN 40% of the space */
+.user-info input[name="pin"] {
+    flex: 4;
+}
     .match-card { background: var(--card); padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .score-row { display: flex; justify-content: center; align-items: center; gap: 10px; }
     input[type="number"] { width: 30px; height: 30px; text-align: center; font-size: 1.2rem; border: 2px solid #e2e8f0; border-radius: 8px; }
@@ -67,7 +91,7 @@
 </div>
 
       <div class="user-info">
-        <input type="text" name="username" placeholder="Your Name" required>
+        <input type="text" name="username" placeholder="Your Name" required> 
         <input type="number" name="pin" placeholder="PIN" required>
       </div>
       
