@@ -5,14 +5,14 @@
       { "id": 4, "teamA": "Netherlands", "teamB": "Morocco", "points": { "winner": 10, "exact": 5} },
       { "id": 5, "teamA": "Côte d'Ivoire", "teamB": "Norway", "points": { "winner": 10, "exact": 5} },
       { "id": 6, "teamA": "France", "teamB": "Sweden", "points": { "winner": 10, "exact": 5} },
-      { "id": 7, "teamA": "Mexico", "teamB": "TBD", "points": { "winner": 10, "exact": 5} },
-      { "id": 8, "teamA": "England", "teamB": "TBD", "points": { "winner": 10, "exact": 5} },
-      { "id": 9, "teamA": "Belgium", "teamB": "TBD", "points": { "winner": 10, "exact": 5} },
+      { "id": 7, "teamA": "Mexico", "teamB": "Ecuador", "points": { "winner": 10, "exact": 5} },
+      { "id": 8, "teamA": "England", "teamB": "DR Congo", "points": { "winner": 10, "exact": 5} },
+      { "id": 9, "teamA": "Belgium", "teamB": "Senegal", "points": { "winner": 10, "exact": 5} },
       { "id": 10, "teamA": "USA", "teamB": "Bosnia and Herzegovina", "points": { "winner": 10, "exact": 5} },
       { "id": 11, "teamA": "Spain", "teamB": "TBD", "points": { "winner": 10, "exact": 5} },
-      { "id": 12, "teamA": "TBD", "teamB": "Croatia", "points": { "winner": 10, "exact": 5} },
+      { "id": 12, "teamA": "Portugal", "teamB": "Croatia", "points": { "winner": 10, "exact": 5} },
       { "id": 13, "teamA": "Switzerland", "teamB": "TBD", "points": { "winner": 10, "exact": 5} },
       { "id": 14, "teamA": "Australia", "teamB": "Egypt", "points": { "winner": 10, "exact": 5} },
       { "id": 15, "teamA": "Argentina", "teamB": "Cabo Verde", "points": { "winner": 10, "exact": 5} },
-      { "id": 16, "teamA": "TBD", "teamB": "TBD", "points": { "winner": 10, "exact": 5} } 
+      { "id": 16, "teamA": "Colombia", "teamB": "Ghana", "points": { "winner": 10, "exact": 5} } 
 ]
