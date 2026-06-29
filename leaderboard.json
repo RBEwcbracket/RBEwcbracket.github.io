@@ -610,10 +610,10 @@
     {
         "username": "Random03",
         "pin": 3030,
-        "totalPoints": 10,
+        "totalPoints": 15,
         "breakdown": {
             "winnerPoints": 10,
-            "exactPoints": 0
+            "exactPoints": 5
         },
         "matchPoints": [
             {
@@ -626,7 +626,7 @@
             },
             {
                 "matchId": 3,
-                "pointsEarned": 0
+                "pointsEarned": 5
             },
             {
                 "matchId": 4,
@@ -757,7 +757,7 @@
                 "pointsEarned": 0
             }
         ],
-        "rank": 9
+        "rank": 10
     },
     {
         "username": "Riza",
@@ -833,7 +833,7 @@
                 "pointsEarned": 0
             }
         ],
-        "rank": 9
+        "rank": 10
     },
     {
         "username": "Albano",
@@ -909,7 +909,7 @@
                 "pointsEarned": 0
             }
         ],
-        "rank": 9
+        "rank": 10
     },
     {
         "username": "Vini",
@@ -985,6 +985,6 @@
                 "pointsEarned": 0
             }
         ],
-        "rank": 9
+        "rank": 10
     }
 ]
