@@ -1,6 +1,6 @@
 [
       { "id": 1, "scoreA": 0, "scoreB": 1, "winner": "teamB"},
-      { "id": 2, "scoreA": null, "scoreB": null, "winner": null},
+      { "id": 2, "scoreA": 2, "scoreB": 1, "winner": "teamA"},
       { "id": 3, "scoreA": null, "scoreB": null, "winner": null},
       { "id": 4, "scoreA": null, "scoreB": null, "winner": null},
       { "id": 5, "scoreA": null, "scoreB": null, "winner": null},
