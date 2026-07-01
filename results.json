@@ -7,7 +7,7 @@
       { "id": 6, "scoreA": 3, "scoreB": 0, "winner": "teamA"},
       { "id": 7, "scoreA": 2, "scoreB": 0, "winner": "teamA"},
       { "id": 8, "scoreA": 2, "scoreB": 1, "winner": "teamA"},
-      { "id": 9, "scoreA": null, "scoreB": null, "winner": null},
+      { "id": 9, "scoreA": 0, "scoreB": 1, "winner": "teamB"},
       { "id": 10, "scoreA": null, "scoreB": null, "winner": null},
       { "id": 11, "scoreA": null, "scoreB": null, "winner": null},
       { "id": 12, "scoreA": null, "scoreB": null, "winner": null},
