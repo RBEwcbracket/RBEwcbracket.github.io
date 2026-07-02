@@ -2,9 +2,9 @@
     {
         "username": "BenH",
         "pin": 5791,
-        "totalPoints": 85,
+        "totalPoints": 95,
         "breakdown": {
-            "winnerPoints": 70,
+            "winnerPoints": 80,
             "exactPoints": 15
         },
         "matchPoints": [
@@ -46,7 +46,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
@@ -78,9 +78,9 @@
     {
         "username": "Juri",
         "pin": 1379,
-        "totalPoints": 80,
+        "totalPoints": 90,
         "breakdown": {
-            "winnerPoints": 70,
+            "winnerPoints": 80,
             "exactPoints": 10
         },
         "matchPoints": [
@@ -122,7 +122,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
@@ -154,9 +154,9 @@
     {
         "username": "EP",
         "pin": 9318,
-        "totalPoints": 80,
+        "totalPoints": 90,
         "breakdown": {
-            "winnerPoints": 70,
+            "winnerPoints": 80,
             "exactPoints": 10
         },
         "matchPoints": [
@@ -198,7 +198,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
@@ -230,9 +230,9 @@
     {
         "username": "bradA",
         "pin": 5005,
-        "totalPoints": 80,
+        "totalPoints": 90,
         "breakdown": {
-            "winnerPoints": 70,
+            "winnerPoints": 80,
             "exactPoints": 10
         },
         "matchPoints": [
@@ -274,7 +274,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
@@ -306,9 +306,9 @@
     {
         "username": "Matt 123",
         "pin": 9548,
-        "totalPoints": 80,
+        "totalPoints": 90,
         "breakdown": {
-            "winnerPoints": 70,
+            "winnerPoints": 80,
             "exactPoints": 10
         },
         "matchPoints": [
@@ -350,7 +350,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
@@ -382,9 +382,9 @@
     {
         "username": "Maestro",
         "pin": 2496,
-        "totalPoints": 75,
+        "totalPoints": 85,
         "breakdown": {
-            "winnerPoints": 60,
+            "winnerPoints": 70,
             "exactPoints": 15
         },
         "matchPoints": [
@@ -426,7 +426,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
@@ -458,9 +458,9 @@
     {
         "username": "Florian",
         "pin": 1234,
-        "totalPoints": 75,
+        "totalPoints": 85,
         "breakdown": {
-            "winnerPoints": 70,
+            "winnerPoints": 80,
             "exactPoints": 5
         },
         "matchPoints": [
@@ -502,7 +502,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
@@ -534,10 +534,10 @@
     {
         "username": "Albano",
         "pin": 6768,
-        "totalPoints": 65,
+        "totalPoints": 80,
         "breakdown": {
-            "winnerPoints": 50,
-            "exactPoints": 15
+            "winnerPoints": 60,
+            "exactPoints": 20
         },
         "matchPoints": [
             {
@@ -578,7 +578,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 15
             },
             {
                 "matchId": 11,
@@ -610,9 +610,9 @@
     {
         "username": "Vini",
         "pin": 407,
-        "totalPoints": 60,
+        "totalPoints": 70,
         "breakdown": {
-            "winnerPoints": 60,
+            "winnerPoints": 70,
             "exactPoints": 0
         },
         "matchPoints": [
@@ -654,7 +654,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
@@ -686,9 +686,9 @@
     {
         "username": "Random03",
         "pin": 3030,
-        "totalPoints": 55,
+        "totalPoints": 65,
         "breakdown": {
-            "winnerPoints": 50,
+            "winnerPoints": 60,
             "exactPoints": 5
         },
         "matchPoints": [
@@ -730,7 +730,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
@@ -762,9 +762,9 @@
     {
         "username": "Sid ",
         "pin": 1980,
-        "totalPoints": 55,
+        "totalPoints": 65,
         "breakdown": {
-            "winnerPoints": 50,
+            "winnerPoints": 60,
             "exactPoints": 5
         },
         "matchPoints": [
@@ -806,7 +806,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
@@ -838,9 +838,9 @@
     {
         "username": "NorWIN",
         "pin": 1975,
-        "totalPoints": 50,
+        "totalPoints": 60,
         "breakdown": {
-            "winnerPoints": 50,
+            "winnerPoints": 60,
             "exactPoints": 0
         },
         "matchPoints": [
@@ -882,7 +882,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
@@ -914,9 +914,9 @@
     {
         "username": "Riza",
         "pin": 1970,
-        "totalPoints": 40,
+        "totalPoints": 50,
         "breakdown": {
-            "winnerPoints": 40,
+            "winnerPoints": 50,
             "exactPoints": 0
         },
         "matchPoints": [
@@ -958,7 +958,7 @@
             },
             {
                 "matchId": 10,
-                "pointsEarned": 0
+                "pointsEarned": 10
             },
             {
                 "matchId": 11,
